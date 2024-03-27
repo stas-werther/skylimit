@@ -1,5 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;700&display=swap');
+@font-face {
+    font-weight: 400;
+    /* Соответствует значению normal */
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Regular.ttf");
+}
 
+@font-face {
+    font-weight: 700;
+    /* Соответствует значению bold */
+    font-family: Roboto;
+    src: url("../fonts/Roboto-Bold.ttf");
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -131,8 +142,17 @@ body {
 
 .hero {
     padding: 200px 0;
-    background: url('../img/bg.jpg') no-repeat center;
-    background-size: cover;
+    position: relative;
+}
+
+.hero__bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .hero__text {
@@ -272,7 +292,7 @@ body {
     .header__wrapper {
         display: none;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
         position: fixed;
         height: 100%;
         width: 100%;
@@ -282,7 +302,6 @@ body {
         right: 0;
         z-index: 50;
         overflow-y: auto;
-        padding: 100px 40px;
         background-color: black;
         animation: burgerAnimation 0.4s;
     }
